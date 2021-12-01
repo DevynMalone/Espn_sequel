@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   };
   Nba.init({
     team: DataTypes.STRING,
-    standing: DataTypes.STRING,
+    standing:{
+      type:DataTypes.STRING,
+      allowNull: false  // validation process
+    },
     record: DataTypes.STRING,
     lastScore: DataTypes.STRING
   }, {

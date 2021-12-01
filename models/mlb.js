@@ -14,10 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Mlb.init({
-    team: DataTypes.STRING,
+    team:{
+      type:DataTypes.STRING,
+      allowNull: false  // validation process
+    },
     record: DataTypes.STRING,
     pct: DataTypes.STRING,
-    league: DataTypes.STRING
+    league:{
+      type:DataTypes.STRING,
+      allowNull: false  // validation process
+    }
   }, {
     sequelize,
     modelName: 'Mlb',

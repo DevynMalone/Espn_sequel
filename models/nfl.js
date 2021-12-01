@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     standing: DataTypes.STRING,
     record: DataTypes.STRING,
     lastScore: DataTypes.STRING,
-    sbAppearances: DataTypes.INTEGER
+    sbAppearances: {
+      type:DataTypes.INTEGER,
+    validate:{ isInt: { msg:'Number for player must be an integer'} }
+  }
   }, {
     sequelize,
     modelName: 'Nfl',
